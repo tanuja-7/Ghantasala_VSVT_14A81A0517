@@ -225,7 +225,7 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getNearBirthDate(Date date, int days) {
 		// Add your implementation here
-		
+		return null;
 	}
 
 	@Override
