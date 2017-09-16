@@ -288,6 +288,12 @@ public class StudentGroup implements StudentArrayOperation {
 		// Add your implementation here
 		if(student==null)
 			throw new IllegalArgumentException(" ");
-		return null;		
+		int i;
+		for(i=0;i<students.length-1;i++)
+		{
+			if(student.equals(students[i]))
+				break;		
+		}
+		return students[i+1];
 	}
-}
+          }
