@@ -224,7 +224,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getNearBirthDate(Date date, int days) {
-		// Add your implementation here
+		// Add your implementation here		
 		return null;
 	}
 
@@ -237,13 +237,29 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getStudentsByAge(int age) {
 		// Add your implementation here
+
 		return null;
 	}
 
 	@Override
 	public Student[] getStudentsWithMaxAvgMark() {
 		// Add your implementation here
-		return null;
+		double d=0;
+		for(int i=0;i<students.length;i++)
+		{
+			double t=students[i].getAvgMark();
+			if(t>d)
+				d=t;
+		}
+		int j=0;
+		Student[] stud=new Student[students.length];
+		for(int i=0;i<students.length;i++)
+		{
+			double t=students[i].getAvgMark();
+			if(t==d)
+				stud[j++]=students[i];
+		}
+		return stud;
 	}
 
 	@Override
