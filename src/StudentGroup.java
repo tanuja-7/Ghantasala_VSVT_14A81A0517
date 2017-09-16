@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.lang.IllegalArgumentException;
 
 /**
  * A fix-sized array of students
@@ -25,12 +26,10 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getStudents() {
-		if(Students == null)
-			throw IllegalArgumentException;
+		if(students == null)
+			throw new IllegalArgumentException(" ");
 		else
-			return Student;
-		
-		return null;
+			return students;
 	}
 
 	@Override
