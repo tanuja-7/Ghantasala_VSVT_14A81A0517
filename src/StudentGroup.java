@@ -43,8 +43,7 @@ public class StudentGroup implements StudentArrayOperation {
 		if(index<0 ||(index>=students.length))	
 			throw new IllegalArgumentException(" ");
 		else
-			return students[i];
-		return null;
+			return students[index];
 	}
 
 	@Override
