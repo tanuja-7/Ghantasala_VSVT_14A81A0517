@@ -175,13 +175,16 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void bubbleSort() {
 		// Add your implementation here
+		Student[] students1=new Student[students.length];
 		for(int i=0;i<students.length;i++)
-			for(int j=0;j<(students.length-i-1);j++)
-				if(students[j].compareTo(students[j+1])>0)
+				students1[i]=students[i];
+		for(int i=0;i<students1.length;i++)
+			for(int j=0;j<(students1.length-i-1);j++)
+				if(students1[j].compareTo(students1[j+1])>0)
 				{
-					Student stud=students[j];
-					students[j]=students[j+1];
-					students[j+1]=stud;
+					Student stud=students1[j];
+					students1[j]=students1[j+1];
+					students1[j+1]=stud;
 				}
 	}
 
@@ -283,6 +286,8 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student getNextStudent(Student student) {
 		// Add your implementation here
-		return null;
+		if(student==null)
+			throw new IllegalArgumentException(" ");
+		return null;		
 	}
 }
