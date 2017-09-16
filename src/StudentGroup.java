@@ -94,37 +94,111 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(Student student) {
 		// Add your implementation here
+		if(student==null)
+			throw new IllegalArgumentException(" ");
+		else
+		{
+			int i;
+			for(i=0;i<students.length;i++)
+				if(student.equals(students[i]))
+				{
+					students[i]=null;
+				}
+			if(i==students.length)
+				throw new IllegalArgumentException("Student not exist");		
+		}
 	}
 
 	@Override
 	public void removeFromIndex(int index) {
 		// Add your implementation here
+		if(index<0 || students.length<=index)
+			throw new IllegalArgumentException(" ");
+		else
+		{
+			for(int i=index+1;i<students.length;i++)
+				students[i]=null;
+		}
 	}
 
 	@Override
 	public void removeFromElement(Student student) {
 		// Add your implementation here
+		if(student==null)
+			throw new IllegalArgumentException(" ");
+		else
+		{
+			int i;
+			for(i=0;i<students.length;i++)
+			{
+				if(students[i].equals(student))
+					break;
+			}
+			for(i++;i<students.length;i++)
+				students[i]=null;
+			
+		}
 	}
 
 	@Override
 	public void removeToIndex(int index) {
 		// Add your implementation here
+		if(index<0 || students.length<=index)
+			throw new IllegalArgumentException(" ");
+		else
+		{
+			for(int i=0;i<index;i++)
+				students[i]=null;
+		}
+		
 	}
 
 	@Override
 	public void removeToElement(Student student) {
 		// Add your implementation here
+		if(student==null)
+			throw new IllegalArgumentException(" ");
+		else
+		{
+			int i;
+			for(i=0;i<students.length;i++)
+			{
+				if(students[i].equals(student))
+					break;
+			}
+			for(int j=0;j<i;j++)
+				students[j]=null;
+			
+		}
 	}
 
 	@Override
 	public void bubbleSort() {
 		// Add your implementation here
+		for(int i=0;i<students.length;i++)
+			for(int j=0;j<(students.length-i-1);j++)
+				if(students[j].compareTo(students[j+1])>0)
+				{
+					Student stud=students[j];
+					students[j]=students[j+1];
+					students[j+1]=stud;
+				}
 	}
 
 	@Override
 	public Student[] getByBirthDate(Date date) {
 		// Add your implementation here
-		return null;
+		if(date==null)
+			throw new IllegalArgumentException(" ");
+		else
+		{
+			Student[] stud=new Student[students.length];
+			int j=0;
+			for(int i=0;i<students.length;i++)
+				if(date.compareTo(students[i].getBirthDate())==0)
+					stud[j++]=students[i];
+			return stud;				
+		}
 	}
 
 	@Override
