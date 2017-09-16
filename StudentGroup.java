@@ -251,8 +251,14 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public int getCurrentAgeByDate(int indexOfStudent) {
-		// Add your implementation here
-		return 0;
+		if(indexOfStudent==0)
+			throw new IllegalArgumentException(" ");
+		else
+	{
+		LocalDate now = new LocalDate();
+		Years age = Years.yearsBetween(students[indexOfStudent].getBirthDate(), now);
+		return age;
+	}
 	}
 
 	@Override
